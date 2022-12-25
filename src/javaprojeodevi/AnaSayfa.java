@@ -5,6 +5,7 @@ import java.awt.event.WindowEvent;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 //cxczownfownonw
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -107,32 +108,41 @@ public class AnaSayfa extends javax.swing.JFrame {
 
     private void btnListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListActionPerformed
         close();
-      
+
         try {
-           KelimeListeleSayfasi sayfa = new KelimeListeleSayfasi();
-           sayfa.setVisible(true);
+            KelimeListeleSayfasi sayfa = new KelimeListeleSayfasi();
+            sayfa.setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(AnaSayfa.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
+
+
     }//GEN-LAST:event_btnListActionPerformed
 
     private void btnTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTestActionPerformed
         close();
         try {
-            Database.dbAddTestId();
+            if (Database.dbGetIdArray().size() < 4) {
+                JOptionPane.showMessageDialog(this, "Kelime sayısı 4'den az olamaz...");
+            } else {
+                try {
+                    TestSayfasi test;
+                    Database.dbAddTestId();
+                    test = new TestSayfasi();
+                    test.setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(AnaSayfa.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                
+            }
         } catch (SQLException ex) {
             Logger.getLogger(AnaSayfa.class.getName()).log(Level.SEVERE, null, ex);
         }
-        TestSayfasi test;
-        try {
-            test = new TestSayfasi();
-            test.setVisible(true);
-        } catch (SQLException ex) {
-            Logger.getLogger(AnaSayfa.class.getName()).log(Level.SEVERE, null, ex);
-        }
-       
+
+        
+        
+
     }//GEN-LAST:event_btnTestActionPerformed
 
     private void jLabel1ComponentRemoved(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_jLabel1ComponentRemoved
@@ -142,7 +152,6 @@ public class AnaSayfa extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-
     public static void init() {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

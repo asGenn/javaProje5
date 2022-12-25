@@ -50,7 +50,7 @@ public class TestSayfasi extends javax.swing.JFrame {
         
     }
     public void kaydet(){
-       System.out.println(correctAnswer+ " "+cevap );
+       
         if(correctAnswer.equals(cevap)){
             JOptionPane.showMessageDialog(this ,"Dogru devam et aslan");
         }else{
@@ -81,6 +81,7 @@ public class TestSayfasi extends javax.swing.JFrame {
         btnD = new javax.swing.JRadioButton();
         btnSonrakiSoru2 = new javax.swing.JButton();
         btnSonrakiSoru = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -90,11 +91,11 @@ public class TestSayfasi extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 0, 175);
 
-        lblSoru.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        lblSoru.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
         lblSoru.setForeground(new java.awt.Color(255, 51, 0));
         lblSoru.setText("Soru");
         getContentPane().add(lblSoru);
-        lblSoru.setBounds(70, 110, 440, 100);
+        lblSoru.setBounds(40, 220, 880, 80);
 
         btnA.setBackground(new java.awt.Color(190, 229, 221));
         buttonGroup1.add(btnA);
@@ -115,7 +116,7 @@ public class TestSayfasi extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnA);
-        btnA.setBounds(90, 180, 140, 70);
+        btnA.setBounds(90, 280, 140, 70);
 
         btnB.setBackground(new java.awt.Color(188, 227, 219));
         buttonGroup1.add(btnB);
@@ -135,7 +136,7 @@ public class TestSayfasi extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnB);
-        btnB.setBounds(90, 251, 130, 60);
+        btnB.setBounds(90, 350, 130, 60);
 
         btnC.setBackground(new java.awt.Color(188, 227, 219));
         buttonGroup1.add(btnC);
@@ -154,7 +155,7 @@ public class TestSayfasi extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnC);
-        btnC.setBounds(90, 320, 130, 50);
+        btnC.setBounds(90, 420, 130, 50);
 
         btnD.setBackground(new java.awt.Color(188, 227, 219));
         buttonGroup1.add(btnD);
@@ -173,7 +174,7 @@ public class TestSayfasi extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnD);
-        btnD.setBounds(90, 381, 130, 50);
+        btnD.setBounds(90, 480, 130, 50);
 
         btnSonrakiSoru2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         btnSonrakiSoru2.setText("Sonraki Soru");
@@ -202,6 +203,12 @@ public class TestSayfasi extends javax.swing.JFrame {
         });
         getContentPane().add(btnSonrakiSoru);
         btnSonrakiSoru.setBounds(390, 570, 160, 50);
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 3, 48)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 0, 102));
+        jLabel3.setText("TEST SORULARI");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(80, 20, 430, 80);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/test.jpg"))); // NOI18N
         getContentPane().add(jLabel2);
@@ -243,13 +250,13 @@ public class TestSayfasi extends javax.swing.JFrame {
     private void btnAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAMouseClicked
         // TODO add your handling code here:
         correctAnswer = btnA.getText();
-       System.out.println(correctAnswer);
+       
     }//GEN-LAST:event_btnAMouseClicked
 
     private void btnBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBMouseClicked
         // TODO add your handling code here:
         correctAnswer = btnB.getText();
-       System.out.println(correctAnswer);
+       
         
     }//GEN-LAST:event_btnBMouseClicked
 
@@ -263,7 +270,7 @@ public class TestSayfasi extends javax.swing.JFrame {
     private void btnDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDMouseClicked
         // TODO add your handling code here:
         correctAnswer = btnD.getText();
-        System.out.println(correctAnswer);
+        
         
     }//GEN-LAST:event_btnDMouseClicked
 
@@ -334,6 +341,7 @@ public class TestSayfasi extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel lblSoru;
     // End of variables declaration//GEN-END:variables
 }

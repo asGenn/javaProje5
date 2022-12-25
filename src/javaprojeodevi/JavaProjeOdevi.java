@@ -5,6 +5,8 @@
 package javaprojeodevi;
 
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -16,16 +18,31 @@ public class JavaProjeOdevi {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws SQLException{
+    public static void main(String[] args) {
         
         AnaSayfa.init();
-        try{
-            
-           Database.dbTableCreateTest();
-        }catch(SQLException e){
-            System.out.println(e.toString());
+        
+        try {
+            Database.dbCreate();
+        } catch (SQLException ex) {
+            System.out.println(ex.toString());
         }
-        Database.dbTableClear();
+        try {
+            Database.dbTableCreateTest();
+        } catch (SQLException ex) {
+            System.out.println(ex.toString());
+        }
+        try {
+            Database.dbTableCreate();
+        } catch (SQLException ex) {
+            System.out.println(ex.toString());
+        }
+        
+        try {
+            Database.dbTableClear();
+        } catch (SQLException ex) {
+            System.out.println(ex.toString());
+        }
         
     }
     

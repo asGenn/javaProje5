@@ -31,6 +31,7 @@ public class KelimeListeleSayfasi extends javax.swing.JFrame {
         initComponents();
         DefaultTableModel tblModel = (DefaultTableModel) tblWordList.getModel();
         Database.dbToTable(tblModel);
+        Database.dbTableClear();
 
     }
 
@@ -207,7 +208,7 @@ public class KelimeListeleSayfasi extends javax.swing.JFrame {
         getContentPane().add(txtWordSearch);
         txtWordSearch.setBounds(268, 224, 646, 38);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/search (2).jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/search.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 1024, 700);
 
@@ -254,6 +255,8 @@ public class KelimeListeleSayfasi extends javax.swing.JFrame {
                 Logger.getLogger(KelimeListeleSayfasi.class.getName()).log(Level.SEVERE, null, ex);
             }
             JOptionPane.showMessageDialog(this, "eklendi");
+            txtWord.setText("");
+            txtWordMean.setText(""); 
 
         }else{
             JOptionPane.showMessageDialog(this, "Kelime ve Kelime Anlamı bos bırakılamaz...");
@@ -286,7 +289,8 @@ public class KelimeListeleSayfasi extends javax.swing.JFrame {
                 DefaultTableModel tblModel = (DefaultTableModel) tblWordList.getModel();
                 Database.dbToTable(tblModel);
                 JOptionPane.showMessageDialog(this, "güncellendi");
-
+                txtWord.setText("");
+                txtWordMean.setText("");
             } else {
                 JOptionPane.showMessageDialog(this, "Kelime ve Kelime Anlamı bos bırakılamaz...");
             }
